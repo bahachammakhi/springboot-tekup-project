@@ -29,7 +29,7 @@ class UserController {
   // Aggregate root
   // tag::get-aggregate-root[]
   @GetMapping("/users")
-  List<User> all() {
+  Iterable<User> all() {
     log.info("/Users Running");
     return repository.findAll();
   }
