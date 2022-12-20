@@ -3,7 +3,6 @@ package com.tekupminiproject.TekupMiniProject;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-
 @SpringBootApplication
 public class ImmobilierApplication {
 
@@ -11,4 +10,4 @@ public class ImmobilierApplication {
 		SpringApplication.run(ImmobilierApplication.class, args);
 	}
 
-}
+	}
