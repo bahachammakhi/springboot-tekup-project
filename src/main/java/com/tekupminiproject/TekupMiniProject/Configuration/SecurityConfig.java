@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
@@ -36,7 +37,7 @@ public class SecurityConfig  {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         http .authorizeRequests()
-                .antMatchers("/","/shop/**","/register/**","//h2-console/**").permitAll()
+                .antMatchers("/","/shop/**","/register/**","//h2-console/**","/cart/**","/addToCart/**","/checkout/**").permitAll()
             .antMatchers("/admin/**").hasRole("ADMIN")
                 .anyRequest()
                 .authenticated()
@@ -68,10 +69,10 @@ public class SecurityConfig  {
             AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
-   /* @Bean
+   /*@Bean
     public void configure(WebSecurity webSecurity)throws Exception{
         webSecurity.ignoring().antMatchers("/resources/**","/static/**","images/**","/productImages/**");
     }
-*/
 
+*/
 }

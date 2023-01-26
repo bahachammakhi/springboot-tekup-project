@@ -5,6 +5,7 @@ import com.tekupminiproject.TekupMiniProject.dto.productDTO;
 import com.tekupminiproject.TekupMiniProject.entities.Role;
 
 import com.tekupminiproject.TekupMiniProject.entities.User;
+import com.tekupminiproject.TekupMiniProject.global.GlobalData;
 import com.tekupminiproject.TekupMiniProject.respositories.RoleRepository;
 import com.tekupminiproject.TekupMiniProject.respositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,8 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login(){
+
+      //  GlobalData.cart.clear();
         return "login";
     }
 
