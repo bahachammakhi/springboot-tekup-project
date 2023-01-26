@@ -26,8 +26,9 @@ public class User {
     @Email (message = "{errors.invalid_email}")
     private String email;
 
-
+    @Column(nullable = false, length = 64)
     private String password;
+
     @ManyToMany(cascade = CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinTable( name = "user_role",
             joinColumns = @JoinColumn(name = "USER_ID",referencedColumnName = "ID"),
